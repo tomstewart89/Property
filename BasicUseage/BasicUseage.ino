@@ -14,7 +14,7 @@ class ExampleClass
     return privateFloat; 
   }
   
-  const float &SetPrivateFloat(float set)
+  const float &SetPrivateFloat(const float &set)
   {
     // As well as when we're setting it
     Serial.print("Setting private float to: ");
