@@ -7,7 +7,7 @@
 template<class OwnerType, class PropertyType> class Property
 {
 public:
-    typedef const PropertyType &(OwnerType::*SetterFunction) (PropertyType setValue);
+    typedef const PropertyType &(OwnerType::*SetterFunction) (const PropertyType &setValue);
     typedef PropertyType (OwnerType::*GetterFunction) ();
 
     Property(OwnerType *_owner, GetterFunction _getter, SetterFunction _setter)
@@ -18,7 +18,7 @@ public:
     }
 
     operator PropertyType() { return (owner->*getter)(); }
-    const PropertyType &operator=(PropertyType setValue) { (owner->*setter)(setValue); }
+    const PropertyType &operator=(const PropertyType &setValue) { (owner->*setter)(setValue); }
 
 private:
     OwnerType *owner;
