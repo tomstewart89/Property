@@ -19,9 +19,9 @@ Property<Foo, int> aProperty;
 ```
 The property also requires three parameters upon construction:
 
-	- A pointer to an object of type ParentType
-	- A pointer to a member-function of the parent class that conforms to the prototype: PropertyType Getter()
-	- A pointer to a member-function of the parent class that conforms to the prototype: const PropertyType &Setter(PropertyType)
+- A pointer to an object of type ParentType
+- A pointer to a member-function of the parent class that conforms to the prototype: PropertyType Getter()
+- A pointer to a member-function of the parent class that conforms to the prototype: const PropertyType &Setter(PropertyType)
 
 The first should pretty much always be the 'this' pointer. The other two will be the Getter and Setter function defined in the parent class. These need to be specified in the initialiser list of the parent class like so:
 ```
